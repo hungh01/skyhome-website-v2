@@ -6,6 +6,7 @@ import {
   LinkedinIcon,
   YoutubeIcon,
 } from "../components/svgIcon";
+import Image from "next/image";
 
 
 export default function Home() {
@@ -35,21 +36,17 @@ export default function Home() {
             </div>
 
             {/* Right Content - Phone Mockup */}
-            <div className="flex-1 flex justify-center items-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0 pt-12 lg:pt-0">
-              <div className="relative">
-                {/* Phone Frame */}
-                <div className="relative w-48 h-72 sm:w-56 sm:h-80 lg:w-64 lg:h-96 bg-black rounded-3xl p-2 shadow-2xl">
-                  {/* Phone Screen */}
-                  <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
-                    <div className="text-gray-400 text-sm">
-                      App Screen
-                    </div>
-                  </div>
-                </div>
-
-                {/* Hand holding phone effect */}
-                <div className="absolute -bottom-8 -left-4 sm:-bottom-12 sm:-left-6 lg:-bottom-16 lg:-left-8 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-gradient-to-br from-orange-200 to-orange-300 rounded-full opacity-60 blur-2xl"></div>
+            <div className=" h-screen flex-1 flex justify-center items-center lg:justify-center order-1 lg:order-2 mb-8 lg:mb-0 pt-12 lg:pt-0">
+              <div className="relative self-end">
+                <Image
+                  src="/hand.png"
+                  alt="hand holding phone"
+                  width={256}
+                  height={512}
+                  className="w-full h-full"
+                />
               </div>
+
             </div>
           </div>
         </div>
