@@ -12,7 +12,7 @@ export default function HomeSection() {
                 preload="auto"
                 className="absolute inset-0 w-full h-full object-cover z-11"
             >
-                <source src="/banner-home.mp4" type="video/mp4" />
+                <source src="/banner-home.webm" type="video/webm" />
                 Your browser does not support the video tag.
             </video>
 
