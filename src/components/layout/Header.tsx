@@ -1,6 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import DownloadButton from "../button/DowloadButton";
+
+
+
 
 export function Header() {
     const [scrollY, setScrollY] = useState(0);
@@ -49,16 +53,13 @@ export function Header() {
 
                     {/* Right side - Download button and Language */}
                     <div className="flex items-center space-x-4">
-                        <button className="relative inline-flex items-center justify-center p-0.5  me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-3xl group bg-gradient-to-br from-yellow-200 via-amber-100 to-yellow-200 ">
-                            <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-900 rounded-3xl group-hover:bg-transparent group-hover:dark:bg-transparent">
-                                Tải ứng dụng ngay
-                            </span>
-                        </button>
+
+                        <DownloadButton text="Tải ứng dụng ngay" href="/" />
                         <div className="w-8 h-8 rounded-full overflow-hidden">
                             <Image
-                                src={"/english.png"}
-                                width={32}
-                                height={32}
+                                src={"/vietnamese.png"}
+                                width={60}
+                                height={60}
                                 alt="US Flag"
                                 className="w-full h-full object-cover"
                             />

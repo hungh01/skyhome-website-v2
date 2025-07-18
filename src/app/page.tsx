@@ -7,6 +7,7 @@ import {
   YoutubeIcon,
 } from "../components/svgIcon";
 import Image from "next/image";
+import NavigationButton from "@/components/button/NavigationButton";
 
 
 export default function Home() {
@@ -28,11 +29,7 @@ export default function Home() {
                 Luôn lắng nghe phản hồi, giải quyết vấn đề nhanh chóng và chuyên nghiệp để đảm bảo sự hài lòng tối đa
               </p>
 
-              <button className="relative inline-flex items-center justify-center p-0.5 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-3xl group bg-gradient-to-br from-yellow-200 via-amber-100 to-yellow-200">
-                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-900 rounded-3xl group-hover:bg-transparent group-hover:dark:bg-transparent font-bold">
-                  Liên hệ với chúng tôi
-                </span>
-              </button>
+              <NavigationButton text="Liên hệ với chúng tôi" href="/contact" />
             </div>
 
             {/* Right Content - Phone Mockup */}
