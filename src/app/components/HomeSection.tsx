@@ -7,10 +7,8 @@ import Image from "next/image";
 
 export default function HomeSection() {
 
-
-
-
-    const { isMobile } = useViewport();
+    1058
+    const { isMobile, width } = useViewport();
 
     return (
         <section className={`w-full h-screen relative overflow-hidden pt-3 ${isMobile ? 'bg-[url("/banner-home.png")] bg-cover bg-center' : ''}`}>
@@ -26,14 +24,15 @@ export default function HomeSection() {
                 >
                     <source src="/banner-home.webm" type="video/webm" />
                     Your browser does not support the video tag.
-                </video>)}
+                </video>)
+            }
 
             {/* Content */}
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
                 <div className="flex flex-col lg:flex-row items-center justify-between h-full px-4 pt-6 lg:py-0">
                     {/* Left Content */}
                     <div className="flex-1 max-w-2xl text-center lg:text-left mb-4 lg:mb-0 order-1 pt-14 lg:order-1">
-                        <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-sky-900 leading-tight mb-6">
+                        <h1 className={`text-2xl ${width < 1058 ? 'text-5xl' : ' sm:text-5xl lg:text-6xl'} font-bold text-sky-900 leading-tight mb-6`}>
                             Ứng dụng tiện ích
                             <br />
                             <span>Cho người Việt</span>
@@ -56,7 +55,6 @@ export default function HomeSection() {
                                     height={200}
                                     className="w-full h-auto"
                                 />}
-
                         </div>
 
                     </div>
