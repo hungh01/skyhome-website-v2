@@ -37,10 +37,23 @@ const useResponsiveEllipse = () => {
     return ellipse;
 };
 
-const MenuToggler = () => (
-    <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 hover:scale-125 text-center">
-        <h1 className="text-xl sm:text-2xl md:text-4xl font-bold">Dịch vụ của</h1>
-        <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold">SkyHome</h2>
+const MenuToggler = ({
+    isOpen,
+    setIsOpen,
+}: {
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => (
+    <div
+        className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center cursor-pointer"
+        style={{ cursor: "pointer" }}
+        onClick={() => setIsOpen((prev: boolean) => !prev)}
+    >
+        <span className="text-xl sm:text-2xl md:text-4xl font-bold cursor-pointer">
+            Dịch vụ của
+            <br />
+            SkyHome
+        </span>
     </div>
 );
 
@@ -158,7 +171,7 @@ export default function FlowerMenu({
                 maxHeight: "100vw",
             }}
         >
-            <MenuToggler />
+            <MenuToggler isOpen={isOpen} setIsOpen={setIsOpen} />
             <ul className="absolute inset-0 m-0 h-full w-full list-none p-0">
                 {menuItems.map((item, index) => (
                     <MenuItem
@@ -172,8 +185,8 @@ export default function FlowerMenu({
                         itemCount={itemCount}
                         itemSize={itemSize}
                         iconSize={iconSize}
-                        a={a - (width > 450 ? 30 : 0)}
-                        b={b - (width > 450 ? 50 : 0)}
+                        a={a - (width > 1000 ? 30 : -50)}
+                        b={b - (width > 1000 ? 50 : -50)}
                     />
                 ))}
             </ul>
