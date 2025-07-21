@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ViewportProvider } from "@/contexts/ViewportContext";
 
 
 export const metadata: Metadata = {
@@ -20,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <ViewportProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ViewportProvider>
       </body>
     </html>
   );
