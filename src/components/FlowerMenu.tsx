@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 type MenuItem = {
-    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+    icon: React.ComponentType<any>;
     href: string;
+    name: string;
 };
 
 type FlowerMenuProps = {
@@ -15,74 +16,17 @@ type FlowerMenuProps = {
     togglerSize?: number;
 };
 
-const MenuToggler = ({
-    isOpen,
-    onChange,
-    backgroundColor,
-    iconColor,
-    animationDuration,
-    togglerSize,
-    iconSize,
-}: {
-    isOpen: boolean;
-    onChange: () => void;
-    backgroundColor: string;
-    iconColor: string;
-    animationDuration: number;
-    togglerSize: number;
-    iconSize: number;
-}) => {
-    const lineHeight = iconSize * 0.1;
-    const lineWidth = iconSize * 0.8;
-    const lineSpacing = iconSize * 0.25;
+const MenuToggler = () => {
 
     return (
-        <>
-            <input
-                id="menu-toggler"
-                type="checkbox"
-                checked={isOpen}
-                onChange={onChange}
-                className="absolute inset-0 z-10 m-auto cursor-pointer opacity-0"
-                style={{ width: togglerSize, height: togglerSize }}
-            />
-            <label
-                htmlFor="menu-toggler"
-                className="absolute inset-0 z-20 m-auto flex cursor-pointer items-center justify-center rounded-full transition-all"
-                style={{
-                    backgroundColor,
-                    color: iconColor,
-                    transitionDuration: `${animationDuration}ms`,
-                    width: togglerSize,
-                    height: togglerSize,
-                }}
-            >
-                <span
-                    className="relative flex flex-col items-center justify-center"
-                    style={{ width: iconSize, height: iconSize }}
-                >
-                    {[0, 1, 2].map((i) => (
-                        <span
-                            key={i}
-                            className={`absolute bg-current transition-all ${isOpen && i === 0
-                                ? "opacity-0"
-                                : isOpen
-                                    ? `${i === 1 ? "rotate-45" : "-rotate-45"}`
-                                    : ""
-                                }`}
-                            style={{
-                                transitionDuration: `${animationDuration}ms`,
-                                width: lineWidth,
-                                height: lineHeight,
-                                top: isOpen
-                                    ? `calc(50% - ${lineHeight / 2}px)`
-                                    : `calc(50% + ${(i - 1) * lineSpacing}px - ${lineHeight / 2}px)`,
-                            }}
-                        />
-                    ))}
-                </span>
-            </label>
-        </>
+        <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-200 hover:scale-125 text-center">
+            <h1 className="text-4xl font-bold">
+                Dịch vụ của
+            </h1>
+            <h2 className="text-6xl font-bold">
+                SkyHome
+            </h2>
+        </div>
     );
 };
 
@@ -108,14 +52,25 @@ const MenuItem = ({
     iconSize: number;
 }) => {
     const Icon = item.icon;
+    const angle = (360 / itemCount) * index;
+    const rad = (angle * Math.PI) / 180;
+
+    // Đặt chiều rộng/chiều cao hình elip
+    const a = 500; // bán trục ngang
+    const b = 300; // bán trục dọc
+
+    const x = a * Math.cos(rad);
+    const y = b * Math.sin(rad);
     return (
         <li
-            className={`absolute inset-0 m-auto transition-all ${isOpen ? "opacity-100" : "opacity-0"}`}
+            className={`absolute transition-all ${isOpen ? "opacity-100" : "opacity-0"}`}
             style={{
                 width: itemSize,
                 height: itemSize,
+                left: `calc(50% - ${itemSize / 2}px)`,
+                top: `calc(50% - ${itemSize / 2}px)`,
                 transform: isOpen
-                    ? `rotate(${(360 / itemCount) * index}deg) translateX(-${itemSize + 30}px)`
+                    ? `translate(${x}px, ${y}px) rotate(${angle}deg)`
                     : "none",
                 transitionDuration: `${animationDuration}ms`,
             }}
@@ -124,21 +79,25 @@ const MenuItem = ({
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex h-full w-full items-center justify-center rounded-full opacity-60 transition-all duration-100 ${isOpen ? "pointer-events-auto" : "pointer-events-none"
+                className={`flex h-full w-full items-center justify-center rounded-full transition-all duration-100 ${isOpen ? "pointer-events-auto" : "pointer-events-none"
                     } group hover:scale-125 hover:opacity-100`}
                 style={{
                     backgroundColor,
                     color: iconColor,
-                    transform: `rotate(-${(360 / itemCount) * index}deg)`,
-                    transitionDuration: `${animationDuration}ms`,
+                    transform: `rotate(-${angle}deg)`, // giữ icon đứng thẳng
+                    transitionDuration: `${500}ms`,
                 }}
             >
                 <Icon
                     className="transition-transform duration-200 group-hover:scale-125"
                     style={{ width: iconSize, height: iconSize }}
                 />
+                <div className="absolute left-1/2 top-full -translate-x-1/2 mt-2 w-max text-center">
+                    <span className="text-sm font-medium">{item.name}</span>
+                </div>
             </Link>
         </li>
+
     );
 };
 
@@ -154,17 +113,29 @@ export default function FlowerMenu({
     const itemSize = togglerSize * 2;
     const iconSize = Math.max(24, Math.floor(togglerSize * 0.6));
 
+    const menuRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const ref = menuRef.current;
+        if (!ref) return;
+        const observer = new window.IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsOpen(true);
+                } else {
+                    setIsOpen(false);
+                }
+            },
+            {
+                threshold: 0.3,
+            }
+        );
+        observer.observe(ref);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <nav className="relative min-h-64" style={{ width: togglerSize * 3, height: togglerSize * 3 }}>
-            <MenuToggler
-                isOpen={isOpen}
-                onChange={() => setIsOpen(!isOpen)}
-                backgroundColor={backgroundColor}
-                iconColor={iconColor}
-                animationDuration={animationDuration}
-                togglerSize={togglerSize}
-                iconSize={iconSize}
-            />
+        <nav ref={menuRef} className="relative min-h-64" style={{ width: togglerSize * 3, height: togglerSize * 3 }}>
+            <MenuToggler />
             <ul className="absolute inset-0 m-0 h-full w-full list-none p-0">
                 {menuItems.map((item, index) => (
                     <MenuItem
