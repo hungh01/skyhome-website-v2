@@ -7,7 +7,6 @@ import Image from "next/image";
 
 export default function HomeSection() {
 
-    1058
     const { isMobile, width } = useViewport();
 
     return (

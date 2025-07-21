@@ -1,30 +1,31 @@
 'use client';
 import FlowerMenu from "@/components/FlowerMenu";
+import Image from "next/image";
 
 const DichVuKhacIcon = () => (
-    <img src="/service/dichvukhac.png" alt="Dich vu khac" />
+    <Image src="/service/dichvukhac.png" alt="Dich vu khac" width={500} height={500} />
 );
 const MayGiatIcon = () => (
-    <img src="/service/vsmaygiat.png" alt="May giat" />
+    <Image src="/service/vsmaygiat.png" alt="May giat" width={500} height={500} />
 );
 
 const MayLanhIcon = () => (
-    <img src="/service/vsmaylanh.png" alt="May lanh" />
+    <Image src="/service/vsmaylanh.png" alt="May lanh" width={500} height={500} />
 );
 const MayNongLanhIcon = () => (
-    <img src="/service/vsmaynonglanh.png" alt="May nong lanh" />
+    <Image src="/service/vsmaynonglanh.png" alt="May nong lanh" width={500} height={500} />
 );
 
 const TongVeSinhIcon = () => (
-    <img src="/service/tongvs.png" alt="Tong ve sinh" />
+    <Image src="/service/tongvs.png" alt="Tong ve sinh" width={500} height={500} />
 );
 const VeSinhTheoGioIcon = () => (
-    <img src="/service/vstheogio.png" alt="Ve sinh theo gio" />
+    <Image src="/service/vstheogio.png" alt="Ve sinh theo gio" width={500} height={500} />
 );
 
 export default function ServiceSection() {
     return (
-        <section className="w-full h-screen bg-center bg-no-repeat bg-cover bg-[url('/service/mapmapmo.png')]">
+        <section className=" mt-5 mb-5 w-full h-screen bg-center bg-no-repeat bg-cover bg-[url('/service/mapmapmo.png')]">
             <div className="flex justify-center items-center h-full">
                 <FlowerMenu
                     animationDuration={5000}

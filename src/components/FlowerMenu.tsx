@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useViewport } from "@/contexts/ViewportContext";
 
 type MenuItem = {
-    icon: React.ComponentType<any>;
+    icon: React.ComponentType<{ className?: string; width?: number; height?: number }>
     href: string;
 
 };
@@ -74,7 +74,6 @@ const MenuItem = ({
     const rad = (angle * Math.PI) / 180;
     const x = a * Math.cos(rad);
     const y = b * Math.sin(rad);
-    console.log("iconsize", iconSize);
     return (
         <li
             className={`absolute transition-all ${isOpen ? "opacity-100" : "opacity-0"}`}
@@ -138,6 +137,16 @@ export default function FlowerMenu({
         return () => observer.disconnect();
     }, []);
 
+    /**
+     * Responsive ellipse calculation for iPad and phone.
+     * Already handled in useResponsiveEllipse, but here's a summary:
+     * - Phone (<640px): a=120, b=80, size=48
+     * - Tablet (<1024px): a=220, b=140, size=64
+     * - Desktop: a=500, b=300, size=120
+     * 
+     * If you want to use these values elsewhere, you can access { a, b, size } from useResponsiveEllipse().
+     */
+
     return (
         <nav
             ref={menuRef}
@@ -163,8 +172,8 @@ export default function FlowerMenu({
                         itemCount={itemCount}
                         itemSize={itemSize}
                         iconSize={iconSize}
-                        a={a}
-                        b={b}
+                        a={a - (width > 450 ? 30 : 0)}
+                        b={b - (width > 450 ? 50 : 0)}
                     />
                 ))}
             </ul>
