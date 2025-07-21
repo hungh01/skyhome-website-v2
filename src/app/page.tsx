@@ -2,6 +2,7 @@
 import InforSection from "./components/InforSection";
 import HomeSection from "./components/HomeSection";
 import ServiceSection from "./components/ServiceSection";
+import IntroduceSection from "./components/IntroduceSection";
 
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
       <HomeSection />
       <InforSection />
       <ServiceSection />
-
+      <IntroduceSection />
     </main>
   );
 }

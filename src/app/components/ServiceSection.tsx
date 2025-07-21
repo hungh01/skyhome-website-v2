@@ -1,22 +1,25 @@
 'use client';
 import FlowerMenu from "@/components/FlowerMenu";
 
+const DichVuKhacIcon = () => (
+    <img src="/service/dichvukhac.png" alt="Dich vu khac" />
+);
 const MayGiatIcon = () => (
-    <img src="/service/maygiat.png" alt="May giat" style={{ width: 150, height: 150 }} />
+    <img src="/service/vsmaygiat.png" alt="May giat" />
 );
 
 const MayLanhIcon = () => (
-    <img src="/service/maylanh.png" alt="May lanh" style={{ width: 150, height: 150 }} />
+    <img src="/service/vsmaylanh.png" alt="May lanh" />
 );
 const MayNongLanhIcon = () => (
-    <img src="/service/maynonglanh.png" alt="May nong lanh" style={{ width: 180, height: 180 }} />
+    <img src="/service/vsmaynonglanh.png" alt="May nong lanh" />
 );
 
 const TongVeSinhIcon = () => (
-    <img src="/service/tongvesinh.png" alt="Tong ve sinh" style={{ width: 150, height: 150 }} />
+    <img src="/service/tongvs.png" alt="Tong ve sinh" />
 );
 const VeSinhTheoGioIcon = () => (
-    <img src="/service/vesinhtheogio.png" alt="Ve sinh theo gio" style={{ width: 150, height: 150 }} />
+    <img src="/service/vstheogio.png" alt="Ve sinh theo gio" />
 );
 
 export default function ServiceSection() {
@@ -30,33 +33,27 @@ export default function ServiceSection() {
                     menuItems={[
                         {
                             href: 'https://github.com/',
+                            icon: DichVuKhacIcon,
+                        },
+                        {
+                            href: 'https://github.com/',
                             icon: MayGiatIcon,
-                            name: 'Vệ sinh điều hoà'
                         },
                         {
                             href: 'https://twitter.com/',
                             icon: MayLanhIcon,
-                            name: 'Vệ sinh máy lạnh'
                         },
                         {
                             href: 'https://instagram.com/',
                             icon: MayNongLanhIcon,
-                            name: 'Vệ sinh máy nóng lạnh'
                         },
                         {
                             href: 'https://www.linkedin.com/',
                             icon: TongVeSinhIcon,
-                            name: 'Vệ sinh máy giặt'
                         },
                         {
                             href: 'https://www.youtube.com/',
                             icon: VeSinhTheoGioIcon,
-                            name: 'Vệ sinh theo giờ'
-                        },
-                        {
-                            href: 'https://www.youtube.com/',
-                            icon: VeSinhTheoGioIcon,
-                            name: 'Tổng vệ sinh'
                         },
 
                     ]}

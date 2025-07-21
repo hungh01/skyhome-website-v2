@@ -5,7 +5,6 @@ import { createContext, useContext, useEffect, useState, ReactNode } from 'react
 interface ViewportContextType {
     isMobile: boolean;
     width: number;
-    scrollY: number;
 }
 
 const ViewportContext = createContext<ViewportContextType | undefined>(undefined);
@@ -13,7 +12,6 @@ const ViewportContext = createContext<ViewportContextType | undefined>(undefined
 export const ViewportProvider = ({ children }: { children: ReactNode }) => {
     const [isMobile, setIsMobile] = useState(false);
     const [width, setWidth] = useState(2000);
-    const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
         const handleResize = () => {
@@ -21,21 +19,13 @@ export const ViewportProvider = ({ children }: { children: ReactNode }) => {
             setWidth(window.innerWidth);
         };
 
-        const handleScroll = () => {
-            setScrollY(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        // Clean up scroll event
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            window.removeEventListener('scroll', handleScroll);
-        };
-
+        handleResize(); // set lần đầu
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
-        <ViewportContext.Provider value={{ isMobile, width, scrollY }}>
+        <ViewportContext.Provider value={{ isMobile, width }}>
             {children}
         </ViewportContext.Provider>
     );
