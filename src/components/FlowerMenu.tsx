@@ -175,8 +175,8 @@ export default function FlowerMenu({
                         itemCount={itemCount}
                         itemSize={itemSize}
                         iconSize={iconSize}
-                        a={a - (width > 1000 ? 30 : -50)}
-                        b={b - (width > 1000 ? 50 : -50)}
+                        a={a - (width > 1000 ? 70 : -10)}
+                        b={b - (width > 1000 ? 70 : -40)}
                     />
                 ))}
             </ul>

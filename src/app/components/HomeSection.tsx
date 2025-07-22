@@ -32,7 +32,9 @@ export default function HomeSection() {
                     {/* Left Content */}
                     <div className="flex-1 max-w-2xl text-center lg:text-left mb-4 lg:mb-0 order-1 pt-14 lg:order-1">
                         <h1 className={`text-2xl ${width < 1058 && width > 810 ? 'text-5xl' : ''} ${width < 850 ? 'text-3xl' : ''} ${width > 1058 ? 'text-6xl' : ''} font-bold text-sky-900 leading-tight mb-6`}>
-                            Ứng dụng tiện ích
+                            Ứng dụng
+                            <br />
+                            Tiện ích
                             <br />
                             <span>Cho người Việt</span>
                         </h1>

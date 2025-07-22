@@ -1,5 +1,4 @@
 "use client";
-import { useViewport } from "@/contexts/ViewportContext";
 
 interface DownloadButtonProps {
     text?: string;
