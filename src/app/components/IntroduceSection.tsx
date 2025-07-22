@@ -19,7 +19,7 @@ export default function IntroduceSection() {
             {/* Content on top */}
             <div className="relative max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-center md:text-left z-10">
                 <div className="flex items-center justify-center">
-                    <div className="w-[420px] h-[420px] sm:w-[450px] sm:h-[450px] md:w-[520px] md:h-[520px] relative flex items-center justify-center">
+                    <div className="w-[420px] h-[420px] sm:w-[450px] sm:h-[450px] md:w-[620px] md:h-[620px] relative flex items-center justify-center">
                         {/* Main background image */}
                         <Image
                             src="/introduce/others-phone-bg.png"
@@ -32,13 +32,27 @@ export default function IntroduceSection() {
                         <ImageSlider />
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-center text-sky-900 sm:pr-18 sm:pl-18 pr-8 pl-8 md:pr-0 md:pl-0 ">
-                    <div className="flex items-center justify-center gap-6 mb-6">
+                <div className="flex flex-col items-center justify-center text-black sm:pr-18 sm:pl-18 pr-8 pl-8 md:pr-0 md:pl-0 ">
+                    <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold text-secondary uppercase mb-3 sm:mb-4 md:mb-6">
+                        Giá trị cốt lõi
+                    </h2>
+                    <div className="flex flex-col gap-2 text-justify items-left">
+                        {coreValues.map(({ title, text }) => (
+                            <span
+                                key={title}
+                                className="text-xs sm:text-sm md:text-base lg:text-lg text-secondary"
+                            >
+                                <span className="font-bold">{title}:&nbsp;</span>
+                                {text}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="flex items-center justify-center gap-6 mb-3 mt-5">
                         {/* iOS Download Link */}
                         <div className="flex items-center justify-center relative group">
                             <Image
                                 className="cursor-pointer h-auto w-[14vw] max-w-[200px] min-w-[80px]"
-                                src="/introduce/download/others-download-android.svg"
+                                src="/introduce/download/others-download-android.png"
                                 alt="ios-download-image"
                                 width={200} height={100}
                             />
@@ -50,7 +64,7 @@ export default function IntroduceSection() {
                         <div className="flex items-center justify-center relative group">
                             <Image
                                 className="cursor-pointer h-auto w-[14vw] max-w-[200px] min-w-[80px]"
-                                src="/introduce/download/others-download-ios.svg"
+                                src="/introduce/download/others-download-ios.png"
                                 alt="android-download-image"
                                 width={200} height={100}
                             />
@@ -74,20 +88,6 @@ export default function IntroduceSection() {
                       animation: fadeSlideIn 0.5s ease forwards;
                     }
                     `}</style>
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold text-secondary uppercase mb-3 sm:mb-4 md:mb-6">
-                        Giá trị cốt lõi
-                    </h2>
-                    <div className="flex flex-col gap-2 text-justify items-left">
-                        {coreValues.map(({ title, text }) => (
-                            <span
-                                key={title}
-                                className="text-xs sm:text-sm md:text-base lg:text-lg text-secondary"
-                            >
-                                <span className="font-bold">{title}:&nbsp;</span>
-                                {text}
-                            </span>
-                        ))}
-                    </div>
                     <div className="flex flex-col items-center justify-center gap-2 mt-4 text-[#fddb00]">
                         <div className="flex gap-1 sm:gap-2 md:gap-4">
                             <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl">★</span>

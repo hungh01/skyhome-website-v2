@@ -34,11 +34,11 @@ export default function ServiceSection() {
                     menuItems={[
                         {
                             href: 'https://github.com/',
-                            icon: DichVuKhacIcon,
+                            icon: MayGiatIcon,
                         },
                         {
                             href: 'https://github.com/',
-                            icon: MayGiatIcon,
+                            icon: DichVuKhacIcon,
                         },
                         {
                             href: 'https://twitter.com/',
@@ -49,12 +49,12 @@ export default function ServiceSection() {
                             icon: MayNongLanhIcon,
                         },
                         {
-                            href: 'https://www.linkedin.com/',
-                            icon: TongVeSinhIcon,
-                        },
-                        {
                             href: 'https://www.youtube.com/',
                             icon: VeSinhTheoGioIcon,
+                        },
+                        {
+                            href: 'https://www.linkedin.com/',
+                            icon: TongVeSinhIcon,
                         },
 
                     ]}

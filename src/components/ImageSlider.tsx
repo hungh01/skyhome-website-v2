@@ -24,7 +24,7 @@ const ImageSlider = () => {
     };
 
     return (
-        <div className="md:w-50 w-42 max-w-xl md:pt-38 pt-30">
+        <div className="md:w-55 w-42 max-w-xl md:pt-38 pt-30">
             <Slider {...settings}>
                 {images.map((src, index) => (
                     <div key={index} className="w-42 h-64 md:h-84 relative">

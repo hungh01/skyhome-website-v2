@@ -49,7 +49,7 @@ const MenuToggler = ({
         style={{ cursor: "pointer" }}
         onClick={() => setIsOpen((prev: boolean) => !prev)}
     >
-        <span className="text-xl sm:text-2xl md:text-4xl font-bold cursor-pointer">
+        <span className="text-xl sm:text-2xl md:text-4xl font-bold cursor-pointer text-sky-900">
             Dịch vụ của
             <br />
             SkyHome
@@ -150,15 +150,6 @@ export default function FlowerMenu({
         return () => observer.disconnect();
     }, []);
 
-    /**
-     * Responsive ellipse calculation for iPad and phone.
-     * Already handled in useResponsiveEllipse, but here's a summary:
-     * - Phone (<640px): a=120, b=80, size=48
-     * - Tablet (<1024px): a=220, b=140, size=64
-     * - Desktop: a=500, b=300, size=120
-     * 
-     * If you want to use these values elsewhere, you can access { a, b, size } from useResponsiveEllipse().
-     */
 
     return (
         <nav
