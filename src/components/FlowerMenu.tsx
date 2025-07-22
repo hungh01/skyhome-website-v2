@@ -38,7 +38,6 @@ const useResponsiveEllipse = () => {
 };
 
 const MenuToggler = ({
-    isOpen,
     setIsOpen,
 }: {
     isOpen: boolean;
