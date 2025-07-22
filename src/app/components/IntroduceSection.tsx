@@ -88,13 +88,13 @@ export default function IntroduceSection() {
                       animation: fadeSlideIn 0.5s ease forwards;
                     }
                     `}</style>
-                    <div className="flex flex-col items-center justify-center gap-2 mt-4 text-[#fddb00]">
+                    <div className="flex flex-col items-center justify-center gap-2 text-[#fddb00]">
                         <div className="flex gap-1 sm:gap-2 md:gap-4">
-                            <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl">★</span>
-                            <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl">★</span>
-                            <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl">★</span>
-                            <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl">★</span>
-                            <span className="text-xl sm:text-2xl md:text-3xl lg:text-5xl">★</span>
+                            <span className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl">★</span>
+                            <span className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl">★</span>
+                            <span className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl">★</span>
+                            <span className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl">★</span>
+                            <span className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl">★</span>
                         </div>
                     </div>
                 </div>
