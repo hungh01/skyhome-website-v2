@@ -1,3 +1,6 @@
+"use client";
+
+import ImageSlider from "@/components/ImageSlider";
 import Image from "next/image";
 
 const coreValues = [
@@ -16,17 +19,61 @@ export default function IntroduceSection() {
             {/* Content on top */}
             <div className="relative max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-center md:text-left z-10">
                 <div className="flex items-center justify-center">
-                    <div className="w-[420px] h-[420px] sm:w-[450px] sm:h-[450px] md:w-[520px] md:h-[520px] relative">
+                    <div className="w-[420px] h-[420px] sm:w-[450px] sm:h-[450px] md:w-[520px] md:h-[520px] relative flex items-center justify-center">
+                        {/* Main background image */}
                         <Image
                             src="/introduce/others-phone-bg.png"
                             alt="SkyHome Logo"
                             fill
-                            className="object-contain rounded-xl"
+                            className="object-contain rounded-xl z-0"
                             priority
+                            style={{ position: "absolute", inset: 0 }}
                         />
+                        <ImageSlider />
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-center text-sky-900 sm:pr-18 sm:pl-18 pr-8 pl-8 md:pr-0 md:pl-0 ">
+                    <div className="flex items-center justify-center gap-6 mb-6">
+                        {/* iOS Download Link */}
+                        <div className="flex items-center justify-center relative group">
+                            <Image
+                                className="cursor-pointer h-auto w-[14vw] max-w-[200px] min-w-[80px]"
+                                src="/introduce/download/others-download-android.svg"
+                                alt="ios-download-image"
+                                width={200} height={100}
+                            />
+                            <div className="p-2 absolute hidden group-hover:block top-[75px] w-[200px] h-[200px] bg-white shadow-xl rounded-xl animate-fadeSlideIn">
+                                <Image src="/introduce/download/others-qr-code-example.png" alt="qr-code" width={200} height={200} />
+                            </div>
+                        </div>
+                        {/* Android Download Link */}
+                        <div className="flex items-center justify-center relative group">
+                            <Image
+                                className="cursor-pointer h-auto w-[14vw] max-w-[200px] min-w-[80px]"
+                                src="/introduce/download/others-download-ios.svg"
+                                alt="android-download-image"
+                                width={200} height={100}
+                            />
+                            <div className="p-2 absolute hidden group-hover:block top-[75px] w-[200px] h-[200px] bg-white shadow-xl rounded-xl animate-fadeSlideIn">
+                                <Image src="/introduce/download/others-qr-code-example.png" alt="qr-code" width={200} height={200} />
+                            </div>
+                        </div>
+                    </div>
+                    <style jsx>{`
+                    @keyframes fadeSlideIn {
+                      from {
+                        opacity: 0;
+                        transform: translateY(-10px);
+                      }
+                      to {
+                        opacity: 1;
+                        transform: translateY(0);
+                      }
+                    }
+                    .animate-fadeSlideIn {
+                      animation: fadeSlideIn 0.5s ease forwards;
+                    }
+                    `}</style>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold text-secondary uppercase mb-3 sm:mb-4 md:mb-6">
                         Giá trị cốt lõi
                     </h2>
