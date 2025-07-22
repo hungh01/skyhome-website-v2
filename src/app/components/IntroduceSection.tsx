@@ -1,6 +1,7 @@
 "use client";
 
 import ImageSlider from "@/components/ImageSlider";
+import { useViewport } from "@/contexts/ViewportContext";
 import Image from "next/image";
 
 const coreValues = [
@@ -12,6 +13,7 @@ const coreValues = [
 ];
 
 export default function IntroduceSection() {
+    const { isMobile } = useViewport();
     return (
         <section className="w-full min-h-screen flex items-center justify-center relative bg-gray-50 px-2 py-8 md:px-8 md:py-12">
             {/* Background image with opacity */}
@@ -19,17 +21,21 @@ export default function IntroduceSection() {
             {/* Content on top */}
             <div className="relative max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-center md:text-left z-10">
                 <div className="flex items-center justify-center">
-                    <div className="w-[420px] h-[420px] sm:w-[450px] sm:h-[450px] md:w-[620px] md:h-[620px] relative flex items-center justify-center">
+                    <div className="w-[420px] h-[420px] sm:w-[450px] sm:h-[450px] md:w-[620px] md:h-[620px] relative flex items-center justify-start">
                         {/* Main background image */}
-                        <Image
-                            src="/introduce/others-phone-bg.png"
-                            alt="SkyHome Logo"
-                            fill
-                            className="object-contain rounded-xl z-0"
-                            priority
-                            style={{ position: "absolute", inset: 0 }}
-                        />
-                        <ImageSlider />
+                        <div className={`absolute inset-0 ${!isMobile ? "w-[80%]" : "w-full"} h-full`}>
+                            <Image
+                                src="/introduce/others-phone-bg.png"
+                                alt="SkyHome Logo"
+                                fill
+                                className="object-contain rounded-xl z-0"
+                                priority
+                                style={{ position: "absolute", inset: 0 }}
+                            />
+                            <div className="absolute left-0 top-0 w-full h-full flex items-center justify-center z-10">
+                                <ImageSlider />
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-center text-black sm:pr-18 sm:pl-18 pr-8 pl-8 md:pr-0 md:pl-0 ">
