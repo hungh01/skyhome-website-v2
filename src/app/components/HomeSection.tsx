@@ -10,7 +10,7 @@ export default function HomeSection() {
     const { isMobile, width } = useViewport();
 
     return (
-        <section className={`w-full h-screen relative overflow-hidden pt-3 ${isMobile ? 'bg-[url("/banner-home.png")] bg-cover bg-center' : ''}`}>
+        <section className={`w-full ${isMobile ? 'h-auto' : 'h-screen'} relative overflow-hidden pt-3 ${isMobile ? 'bg-[url("/banner-home.png")] bg-cover bg-center' : ''}`}>
             {/* Background */}
             {!isMobile
                 && (<video
@@ -31,7 +31,7 @@ export default function HomeSection() {
                 <div className="flex flex-col lg:flex-row items-center justify-between h-full px-4 pt-6 lg:py-0">
                     {/* Left Content */}
                     <div className="flex-1 max-w-2xl text-center lg:text-left mb-4 lg:mb-0 order-1 pt-14 lg:order-1">
-                        <h1 className={`text-2xl ${width < 1058 ? 'text-5xl' : ' sm:text-5xl lg:text-6xl'} font-bold text-sky-900 leading-tight mb-6`}>
+                        <h1 className={`text-2xl ${width < 1058 && width > 810 ? 'text-5xl' : ''} ${width < 850 ? 'text-3xl' : ''} ${width > 1058 ? 'text-6xl' : ''} font-bold text-sky-900 leading-tight mb-6`}>
                             Ứng dụng tiện ích
                             <br />
                             <span>Cho người Việt</span>

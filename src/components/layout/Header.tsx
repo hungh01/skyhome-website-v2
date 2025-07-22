@@ -38,20 +38,20 @@ export function Header() {
                             </div>
 
                             {/* Navigation Menu */}
-                            <nav className="flex space-x-8 font-bold">
-                                <a href="#" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium text-center">
+                            <nav className="flex space-x-4 font-bold">
+                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Công ty
                                 </a>
-                                <a href="#" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium text-center">
+                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Khách hàng cá nhân
                                 </a>
-                                <a href="#" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium text-center">
+                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Khách hàng doanh nghiệp
                                 </a>
-                                <a href="#" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium text-center">
+                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Tin tức
                                 </a>
-                                <a href="#" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium text-center">
+                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Hỗ trợ
                                 </a>
                             </nav>
@@ -89,32 +89,29 @@ export function Header() {
                                         <div className="py-4">
                                             <div className="space-y-1">
                                                 {/* Navigation Links */}
-                                                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 text-sm font-medium">
+                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Công ty
                                                 </a>
-                                                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 text-sm font-medium">
+                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Khách hàng cá nhân
                                                 </a>
-                                                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 text-sm font-medium">
+                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Khách hàng doanh nghiệp
                                                 </a>
-                                                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 text-sm font-medium">
+                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Tin tức
                                                 </a>
-                                                <a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-50 text-sm font-medium">
+                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Hỗ trợ
                                                 </a>
+
 
                                                 {/* Divider */}
                                                 <div className="border-t border-gray-200 my-2"></div>
 
                                                 {/* Download Button */}
                                                 <div className="px-4 py-2">
-                                                    <button className="relative inline-flex items-center justify-center p-0.5  me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-3xl group bg-gradient-to-br from-yellow-200 via-amber-100 to-yellow-200 ">
-                                                        <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-900 rounded-3xl group-hover:bg-transparent group-hover:dark:bg-transparent font-bold">
-                                                            Tải ứng dụng ngay
-                                                        </span>
-                                                    </button>
+                                                    <DownloadButton text="Tải ngay" href="/" />
                                                 </div>
 
                                                 {/* Language Selector */}

@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+body,
+* {
+    font-family: 'Sarabun', Arial, Helvetica, sans-serif !important;
+}

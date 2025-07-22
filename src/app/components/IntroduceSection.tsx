@@ -13,7 +13,7 @@ const coreValues = [
 
 export default function IntroduceSection() {
     return (
-        <section className="w-full min-h-screen flex items-center justify-center relative bg-gray-50 shadow-2xl rounded-xl px-2 py-8 md:px-8 md:py-12">
+        <section className="w-full min-h-screen flex items-center justify-center relative bg-gray-50 px-2 py-8 md:px-8 md:py-12">
             {/* Background image with opacity */}
             <div className="absolute inset-0 w-full h-full bg-[url('/introduce/trongdong.png')] bg-cover bg-center opacity-20 rounded-xl"></div>
             {/* Content on top */}
@@ -40,7 +40,7 @@ export default function IntroduceSection() {
                         {coreValues.map(({ title, text }) => (
                             <span
                                 key={title}
-                                className="text-xs sm:text-sm md:text-base lg:text-lg text-secondary"
+                                className="text-xs sm:text-sm md:text-base lg:text-base text-secondary"
                             >
                                 <span className="font-bold">{title}:&nbsp;</span>
                                 {text}

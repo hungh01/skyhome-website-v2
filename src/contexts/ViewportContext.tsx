@@ -15,7 +15,7 @@ export const ViewportProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 1022); // breakpoint tùy chỉnh
+            setIsMobile(window.innerWidth < 1025); // breakpoint tùy chỉnh
             setWidth(window.innerWidth);
         };
 
