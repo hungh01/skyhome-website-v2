@@ -49,21 +49,21 @@ export function Header() {
 
                             {/* Navigation Menu */}
                             <nav className="flex space-x-4 font-bold">
-                                <a href="/about" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
+                                <Link href="/about" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Công ty
-                                </a>
-                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
+                                </Link>
+                                <Link href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Khách hàng cá nhân
-                                </a>
-                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
+                                </Link>
+                                <Link href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Khách hàng doanh nghiệp
-                                </a>
-                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
+                                </Link>
+                                <Link href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Tin tức
-                                </a>
-                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
+                                </Link>
+                                <Link href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Hỗ trợ
-                                </a>
+                                </Link>
                             </nav>
 
                             {/* Right side - Download button and Language */}
