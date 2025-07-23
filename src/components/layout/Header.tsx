@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import DownloadButton from "../button/DowloadButton";
 import { useViewport } from "@/contexts/ViewportContext";
+import Link from "next/link";
 
 
 
@@ -17,29 +18,38 @@ export function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // const [fullUrl, setFullUrl] = useState<string>("");
+
+    // useEffect(() => {
+    //     if (typeof window !== "undefined") {
+    //         setFullUrl(window.location.href);
+    //     }
+    // }, []);
+
+    // console.log("Full URL:", fullUrl);
+
     return (
         <>
-            <header className={`shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollY > 200 ? 'bg-white' : 'bg-transparent'
-                }`}>
+            <header className={`shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white`}>
 
                 <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center transition-all duration-300 ${scrollY > 200 ? 'h-16' : 'h-20'}`}>
                     {/* Desktop Layout */}
                     {width > 1057 && (
                         <div className="hidden md:flex items-center justify-between w-full">
                             {/* Logo */}
-                            <div className="flex-shrink-0">
+                            <Link href="/" className="flex-shrink-0 cursor-pointer">
                                 <Image
                                     src={"/logo-company.svg"}
                                     alt="Logo"
                                     width={scrollY > 200 ? 100 : 125}
                                     height={scrollY > 200 ? 34 : 43}
-                                    className="transition-all duration-300"
+                                    className="transition-all duration-300 pointer-events-auto"
                                 />
-                            </div>
+                            </Link>
 
                             {/* Navigation Menu */}
                             <nav className="flex space-x-4 font-bold">
-                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
+                                <a href="/about" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">
                                     Công ty
                                 </a>
                                 <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900 rounded-sm">

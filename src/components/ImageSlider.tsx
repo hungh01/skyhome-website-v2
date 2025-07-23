@@ -1,4 +1,4 @@
-// components/ImageSlider.tsx
+
 'use client';
 import Slider from 'react-slick';
 import Image from 'next/image';
