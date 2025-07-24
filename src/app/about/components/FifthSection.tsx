@@ -42,7 +42,7 @@ export default function FifthSection() {
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#243c5a] text-left w-full mb-10">
                     Phản hồi từ phía
                     <br />
-                    &ensp;khách hàng.
+                    khách hàng.
                 </h2>
                 <div className="w-full flex flex-col md:flex-row gap-8 justify-center items-stretch">
                     {testimonials.map((t, idx) => (

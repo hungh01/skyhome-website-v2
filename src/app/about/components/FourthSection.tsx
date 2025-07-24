@@ -4,15 +4,17 @@ import { useViewport } from "@/contexts/ViewportContext";
 import { useState } from "react";
 
 const statusDisplay = [
+
     'Chỉ với vài thao tác trên điện thoại, bạn có thể chọn thời gian, địa điểm và loại dịch vụ phù hợp. Dù là cuối tuần hay ngày thường, SkyHome luôn sẵn sàng phục vụ.',
     'Nhân viên được tuyển chọn kỹ lưỡng, đào tạo bài bản và luôn phục vụ với thái độ thân thiện, nghiêm túc. Đảm bảo không gian nhà bạn luôn sạch sẽ, gọn gàng như ý.',
     'Từ dọn nhà theo giờ, vệ sinh máy lạnh, giặt nệm, dọn sau tiệc đến vệ sinh khu vực thú cưng... SkyHome đều có giải pháp phù hợp cho từng gia đình.',
-    'Giá cả hiển thị trước khi đặt dịch vụ, không phát sinh phụ phí bất ngờ. Bạn hoàn toàn an tâm về chất lượng và độ tin cậy khi chọn SkyHome.'
+    'Giá cả hiển thị trước khi đặt dịch vụ, không phát sinh phụ phí bất ngờ. Bạn hoàn toàn an tâm về chất lượng và độ tin cậy khi chọn SkyHome.',
+    'Ứng dụng tiện ích SkyHome'
 ]
 
 export default function FourthSection() {
 
-    const [status, setStatus] = useState(0);
+    const [status, setStatus] = useState(4);
     const { isMobile } = useViewport();
 
     return (
@@ -31,7 +33,7 @@ export default function FourthSection() {
 
                 {/* Ô lời thoại */}
                 <div className="absolute w-98 h-70 top-20 right-35 rounded-lg px-6 py-4 text-white flex items-center justify-center">
-                    <p className="text-sky-900 text-lg  z-10 pb-8 pr-4 pl-4">{statusDisplay[status]}</p>
+                    <p className={`text-sky-900 ${status === 4 ? 'text-3xl font-bold' : 'text-lg'} z-10 pb-8 pr-4 pl-4 text-center`}>{statusDisplay[status]}</p>
                     <Image
                         className="absolute inset-0 w-full h-full object-cover z-0"
                         src="/about/whychoose/talk.png"
