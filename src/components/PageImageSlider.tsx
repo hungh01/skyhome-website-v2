@@ -23,7 +23,7 @@ const settings = {
 
 export default function PageImageSlider() {
     return (
-        <div className="my-slider w-auto h-auto pt-20 pb-0">
+        <div className="my-slider w-auto h-auto pb-0">
             <Slider
                 {...settings}
             >

@@ -16,12 +16,9 @@ export default function CustomerServicePage() {
                 <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
                     <div className="flex flex-col lg:flex-row items-center justify-between h-full px-4 pt-6 lg:py-0">
                         {/* Left Content */}
-
                     </div>
                 </div>
             </section>
-
-
         </main>
     );
 }

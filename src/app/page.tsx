@@ -8,7 +8,7 @@ import OptionalSection from "./components/OptionalSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen justify-between">
+    <main className="min-h-screen justify-between  pt-20">
       <HomeSection />
       <ServiceSection />
       <OptionalSection />
