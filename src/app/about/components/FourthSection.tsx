@@ -4,10 +4,10 @@ import { useViewport } from "@/contexts/ViewportContext";
 import { useState } from "react";
 
 const statusDisplay = [
-    'Text1',
-    'Text2',
-    'Text3',
-    'Text4'
+    'Chỉ với vài thao tác trên điện thoại, bạn có thể chọn thời gian, địa điểm và loại dịch vụ phù hợp. Dù là cuối tuần hay ngày thường, SkyHome luôn sẵn sàng phục vụ.',
+    'Nhân viên được tuyển chọn kỹ lưỡng, đào tạo bài bản và luôn phục vụ với thái độ thân thiện, nghiêm túc. Đảm bảo không gian nhà bạn luôn sạch sẽ, gọn gàng như ý.',
+    'Từ dọn nhà theo giờ, vệ sinh máy lạnh, giặt nệm, dọn sau tiệc đến vệ sinh khu vực thú cưng... SkyHome đều có giải pháp phù hợp cho từng gia đình.',
+    'Giá cả hiển thị trước khi đặt dịch vụ, không phát sinh phụ phí bất ngờ. Bạn hoàn toàn an tâm về chất lượng và độ tin cậy khi chọn SkyHome.'
 ]
 
 export default function FourthSection() {
@@ -16,65 +16,66 @@ export default function FourthSection() {
     const { isMobile } = useViewport();
 
     return (
-        <section className={`w-full ${isMobile ? 'h-auto' : 'h-screen'} relative overflow-hidden bg-[#FFF3CC]`}>
-            <div className="min-h-screen bg-[#fff3d5] pt-20 flex flex-col items-center relative cursor-pointer">
-                <h1 className="text-4xl md:text-5xl font-bold text-[#243c5a] text-left w-full max-w-6xl">
-                    Tại sao nên chọn <br /> <span className="text-[#243c5a]">SkyHome?</span>
-                </h1>
+        <section className={`w-full ${isMobile ? 'h-auto' : 'h-screen'} relative overflow-hidden bg-[url('/about/whychoose/background.png')] bg-cover bg-center`}>
+            <div className="min-h-screen pt-20 flex flex-col items-center relative cursor-pointer">
+
+                <div className="absolute  w-full  top-40 left-25 ">
+                    <Image
+                        src="/about/whychoose/text.png"
+                        alt="SkyHome staff"
+                        width={430}
+                        height={700}
+                        priority
+                    />
+                </div>
 
                 {/* Ô lời thoại */}
-                <div className="absolute top-10 right-90 bg-[#fddb00] rounded-lg px-6 py-4 w-[350px] min-h-[150px] text-white shadow-md flex items-center justify-center">
-                    <p className="text-sky-900 text-lg font-semibold">{statusDisplay[status]}</p>
-                    <div
-                        className="absolute"
-                        style={{
-                            left: 40,
-                            bottom: -22,
-                            width: 0,
-                            height: 0,
-                            borderLeft: '24px solid transparent',
-                            borderRight: '24px solid transparent',
-                            borderTop: '24px solid #fddb00',
-                            borderRadius: '0 0 18px 18px'
-                        }}
+                <div className="absolute w-98 h-70 top-20 right-35 rounded-lg px-6 py-4 text-white flex items-center justify-center">
+                    <p className="text-sky-900 text-lg  z-10 pb-8 pr-4 pl-4">{statusDisplay[status]}</p>
+                    <Image
+                        className="absolute inset-0 w-full h-full object-cover z-0"
+                        src="/about/whychoose/talk.png"
+                        alt="SkyHome staff"
+                        fill
+                        priority
                     />
                 </div>
 
                 {/* Hình ảnh */}
-                <div className="relative z-10 my-12 pt-12 cursor-pointer">
+                <div className="relative z-10 my-0 mx-auto pt-30">
                     <Image
-                        src="/about/talk.png"
+                        src="/about/whychoose/cat.png"
                         alt="SkyHome staff"
-                        width={250}
-                        height={500}
+                        width={450}
+                        height={700}
                         priority
                     />
                 </div>
 
                 {/* 4 ô thông tin xung quanh */}
                 <div
-                    className="absolute left-50 top-[30%] w-[240px] h-[120px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                    className="absolute left-40 top-[47%] w-[250px] h-[90px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
                     onClick={() => setStatus(0)}
                 >
-                    <p className="font-bold text-sky-900">Tầm nhìn</p>
+                    <p className="font-bold text-sky-900 text-xl">Đặt lịch dễ dàng </p>
                 </div>
                 <div
-                    className="absolute left-70 bottom-[25%] w-[240px] h-[120px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                    className="absolute left-70 bottom-[20%] w-[250px] h-[90px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
                     onClick={() => setStatus(1)}
                 >
-                    <p className="font-bold text-sky-900">Sứ mệnh </p>
+                    <p className="font-bold text-sky-900 text-xl">Đội ngũ chuyên nghiệp</p>
                 </div>
                 <div
-                    className="absolute right-50 top-[30%] w-[240px] h-[120px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                    className="absolute right-40 top-[47%] w-[250px] h-[90px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
                     onClick={() => setStatus(2)}
                 >
-                    <p className="font-bold text-sky-900">Mục tiêu ngắn hạn </p>
+                    <p className="font-bold text-sky-900 text-xl">Dịch vụ đa dạng</p>
                 </div>
                 <div
-                    className="absolute right-70 bottom-[25%] w-[240px] h-[120px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                    className="absolute right-70 bottom-[20%] w-[250px] h-[90px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
                     onClick={() => setStatus(3)}
                 >
-                    <p className="font-bold text-sky-900">Mục tiêu dài hạn </p>
+                    <p className="font-bold text-sky-900 text-xl">Minh bạch & an toàn</p>
                 </div>
             </div>
 

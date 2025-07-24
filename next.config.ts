@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['flowbite.s3.amazonaws.com'],
+    domains: [
+      'flowbite.s3.amazonaws.com',
+      'randomuser.me',
+    ],
   },
   theme: {
     extend: {
