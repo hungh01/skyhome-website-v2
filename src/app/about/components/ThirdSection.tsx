@@ -13,39 +13,37 @@ export default function ThirdSection() {
                 className="absolute inset-0 w-full h-full object-cover z-11 opacity-20"
                 src="/introduce/trongdongcomap.png"
                 alt="Background Image"
-                layout="fill"
-                objectFit="cover"
+                fill
+                priority
             />
             {/* Content */}
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
                 <div className="flex flex-col lg:flex-row items-center justify-between h-full px-4 pt-6 lg:py-0">
                     {/* Left Content */}
                     <div className="flex-1 max-w-2xl text-center lg:text-left mb-4 lg:mb-0 order-1 pt-14 lg:order-1">
-                        <h1 className={`text-2xl ${width < 1058 && width > 810 ? 'text-5xl' : ''} ${width < 850 ? 'text-3xl' : ''} ${width > 1058 ? 'text-6xl' : ''} font-bold text-sky-900 leading-tight mb-6`}>
-                            Ứng dụng
+                        <h1 className={`text-2xl ${width < 1058 && width > 810 ? 'text-5xl' : ''} ${width < 850 ? 'text-3xl' : ''} ${width > 1058 ? 'text-8xl' : ''} font-bold text-sky-900 leading-tight mb-6`}>
+                            Văn hoá &
                             <br />
-                            Tiện ích
-                            <br />
-                            <span>Cho người Việt</span>
+                            Con người
                         </h1>
-                        <p className="text-xs sm:text-lg text-gray-700 mb-8 max-w-lg leading-relaxed mx-auto lg:mx-0 opacity-90">
-                            Luôn lắng nghe phản hồi, giải quyết vấn đề nhanh chóng <br /> và chuyên nghiệp để đảm bảo sự hài lòng tối đa
+                        <p className="text-xs sm:text-xl text-gray-700 mb-8 max-w-lg leading-relaxed mx-auto lg:mx-0 opacity-90">
+                            Tại SkyHome, con người luôn là trung tâm.<br />Chúng tôi không chỉ cung cấp dịch vụ,<br />mà cùng nhau tạo ra giá trị sống.
                         </p>
-
-                        <NavigationButton text="Liên hệ với chúng tôi" href="/contact" />
+                        <NavigationButton text={`Giá trị mang lại`} href="/about/value" textsize="text-xl" />
                     </div>
 
                     {/* Right Content - Phone Mockup */}
                     <div className=" h-screen flex-1 flex justify-center items-center lg:justify-center order-2 lg:order-2 mb-0 lg:mb-0 lg:pt-0">
-                        <div className="relative self-end">
+                        <div className="">
                             <Image
-                                src="/hand-mobile.png"
+                                src="/about/culture/culture-personality.png"
                                 alt="Phone Mockup"
-                                width={200}
-                                height={200}
-                                className="w-full h-auto"
+                                width={600}
+                                height={600}
+                                className="w-full h-full z-30"
                             />
                         </div>
+
                     </div>
                 </div>
             </div>
