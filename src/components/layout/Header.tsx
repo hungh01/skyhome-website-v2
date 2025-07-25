@@ -11,6 +11,8 @@ import Link from "next/link";
 export function Header() {
     const { width } = useViewport();
     const [scrollY, setScrollY] = useState(0);
+    const [isOpen, setIsOpen] = useState(false);
+
 
     useEffect(() => {
         const handleScroll = () => setScrollY(window.scrollY);
@@ -18,15 +20,6 @@ export function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // const [fullUrl, setFullUrl] = useState<string>("");
-
-    // useEffect(() => {
-    //     if (typeof window !== "undefined") {
-    //         setFullUrl(window.location.href);
-    //     }
-    // }, []);
-
-    // console.log("Full URL:", fullUrl);
 
     return (
         <>
@@ -88,14 +81,16 @@ export function Header() {
                             <div className={`flex items-center justify-between transition-all duration-300 ${scrollY > 200 ? 'h-16' : 'h-20'}`}>
                                 {/* Mobile menu dropdown */}
                                 <div className="relative group">
-                                    <button className="text-gray-700 hover:text-gray-900 p-2">
+                                    <button className="text-gray-700 hover:text-gray-900 p-2"
+                                        onClick={() => setIsOpen(!isOpen)}>
                                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                                         </svg>
                                     </button>
 
                                     {/* Dropdown Menu */}
-                                    <div className="absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                    <div className={`absolute left-0 top-full mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg transition-all duration-200 z-50
+                                        ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                                         <div className="py-4">
                                             <div className="space-y-1">
                                                 {/* Navigation Links */}
@@ -114,7 +109,6 @@ export function Header() {
                                                 <Link href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Hỗ trợ
                                                 </Link>
-
 
                                                 {/* Divider */}
                                                 <div className="border-t border-gray-200 my-2"></div>

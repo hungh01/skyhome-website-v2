@@ -51,12 +51,12 @@ export default function PageImageSlider() {
                 {...settings}
             >
                 {images.map((src, index) => (
-                    <div key={index} className="w-auto h-185 relative">
+                    <div key={index} className={`w-auto ${isMobile ? 'h-185' : 'h-185'} relative`}>
                         <Image
                             src={src}
                             alt={`Slide ${index + 1}`}
                             fill
-                            className=" object-cover"
+                            className="object-cover"
                             priority
 
                         />
