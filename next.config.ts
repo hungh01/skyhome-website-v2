@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     domains: [
       'flowbite.s3.amazonaws.com',
-      'randomuser.me',
+      'https://randomuser.me',
     ],
   },
   // theme: {
