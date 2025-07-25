@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useViewport } from "@/contexts/ViewportContext";
 import { useState } from "react";
+import { useRef, useEffect } from "react";
 
 const statusDisplay = [
 
@@ -15,31 +16,74 @@ const statusDisplay = [
 export default function FourthSection() {
 
     const [status, setStatus] = useState(4);
-    const { isMobile } = useViewport();
+    const { width } = useViewport();
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const [centerPosition, setCenterPosition] = useState({ top: 0, Left: 0 });
+    let percentItemSize = 1;
+
+    if (width < 600) {
+        percentItemSize = 0.5;
+    } else if (width < 1024) {
+        percentItemSize = 0.75;
+    }
+
+    useEffect(() => {
+        if (sectionRef.current) {
+            const section = sectionRef.current.closest('section');
+            if (section) {
+                const height = section.getBoundingClientRect().height;
+                setCenterPosition({
+                    top: height / 2,
+                    Left: width / 2
+                });
+            }
+        }
+    }, [width]);
 
     return (
-        <section className={`w-full ${isMobile ? 'h-auto' : 'h-screen'} relative overflow-hidden bg-[url('/about/whychoose/background.png')] bg-cover bg-center pt-10`}>
+        <section ref={sectionRef} className={`w-full 'h-auto' relative overflow-hidden bg-[url('/about/whychoose/background.png')] bg-cover bg-center pt-10`}>
             <div className="min-h-screen flex flex-col items-center relative cursor-pointer">
-                <div className="absolute  w-full  top-40 left-25 ">
+                <div className="absolute  w-full"
+                    style={{
+                        top: `${centerPosition.top / 10}px`,
+                        left: `${centerPosition.Left / 4}px`,
+                    }}
+                >
                     <Image
                         src="/about/whychoose/text.png"
                         alt="SkyHome staff"
-                        width={410}
-                        height={700}
+                        width={310 * percentItemSize}
+                        height={200 * percentItemSize}
                         priority
                     />
                 </div>
 
                 {/* Ô lời thoại */}
-                <div className="absolute w-98 h-70 top-20 right-30 rounded-lg px-6 py-4 text-white flex items-center justify-center">
-                    <p className={`text-sky-900 ${status === 4 ? 'text-3xl font-bold' : 'text-lg'} z-10 pb-8 pr-4 pl-4 text-center`}>{statusDisplay[status]}</p>
-                    <Image
-                        className="absolute inset-0 w-full h-full object-cover z-0"
-                        src="/about/whychoose/talk.png"
-                        alt="SkyHome staff"
-                        fill
-                        priority
-                    />
+                <div
+                    className={`absolute rounded-lg px-1 py-4 text-white flex items-center justify-center`}
+                    style={{
+                        width: `${percentItemSize * 350}px`,
+                        height: `${percentItemSize * 220}px`,
+                        top: `${centerPosition.top / 20}px`,
+                        left: `${centerPosition.Left * (1.2)}px`,
+                    }}
+                >
+                    <p className={`text-sky-900 ${status === 4 ? 'font-bold' : ''} z-10 ${percentItemSize === 1 ? 'pb-4 pr-4 pl-4' : 'pb-4 pr-2 pl-2'} text-center`}
+                        style={{
+                            fontSize: `${status === 4 ? percentItemSize * 30 : percentItemSize * 19}px`
+                        }}
+                    >
+                        {statusDisplay[status]}
+                    </p>
+                    <div className="absolute inset-0 w-full h-full z-0">
+                        <Image
+                            src="/about/whychoose/talk.png"
+                            alt="SkyHome staff"
+                            fill
+                            style={{ objectFit: 'cover' }}
+                            priority
+                        />
+                    </div>
                 </div>
 
                 {/* Hình ảnh */}
@@ -47,38 +91,83 @@ export default function FourthSection() {
                     <Image
                         src="/about/whychoose/cat.png"
                         alt="SkyHome staff"
-                        width={450}
-                        height={700}
+                        width={450 * percentItemSize}
+                        height={700 * percentItemSize}
                         priority
                     />
                 </div>
 
                 {/* 4 ô thông tin xung quanh */}
                 <div
-                    className="absolute left-40 top-[47%] w-[250px] h-[90px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                    className={`absolute bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center`}
+                    style={{
+                        width: `${250 * percentItemSize}px`,
+                        height: `${90 * percentItemSize}px`,
+                        top: `${centerPosition.top / 1.5}px`,
+                        left: `${centerPosition.Left - 450 * percentItemSize}px`
+                    }}
                     onClick={() => setStatus(0)}
                 >
-                    <p className="font-bold text-sky-900 text-xl">Đặt lịch dễ dàng </p>
+                    <p className={`font-bold text-sky-900 text-xl`}
+                        style={{
+                            fontSize: `${percentItemSize * 20}px`
+                        }}>
+                        Đặt lịch dễ dàng
+                    </p>
                 </div>
                 <div
-                    className="absolute left-70 bottom-[20%] w-[250px] h-[90px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                    className={`absolute bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center`}
                     onClick={() => setStatus(1)}
+                    style={{
+                        width: `${250 * percentItemSize}px`,
+                        height: `${90 * percentItemSize}px`,
+                        top: `${centerPosition.top / 1.5}px`,
+                        left: `${centerPosition.Left + 200 * percentItemSize}px`
+                    }}
                 >
-                    <p className="font-bold text-sky-900 text-xl">Đội ngũ chuyên nghiệp</p>
+                    <p className={`font-bold text-sky-900 text-xl`}
+                        style={{
+                            fontSize: `${percentItemSize * 20}px`
+                        }}>
+                        Đội ngũ chuyên nghiệp
+                    </p>
                 </div>
                 <div
-                    className="absolute right-40 top-[47%] w-[250px] h-[90px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                    className={`absolute bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center`}
                     onClick={() => setStatus(2)}
+                    style={{
+                        width: `${250 * percentItemSize}px`,
+                        height: `${90 * percentItemSize}px`,
+                        top: `${centerPosition.top * 1.05}px`,
+                        left: `${centerPosition.Left - 400 * percentItemSize}px`
+                    }}
                 >
-                    <p className="font-bold text-sky-900 text-xl">Dịch vụ đa dạng</p>
+                    <p className={`font-bold text-sky-900 text-xl`}
+                        style={{
+                            fontSize: `${percentItemSize * 20}px`
+                        }}>
+                        Dịch vụ đa dạng
+                    </p>
                 </div>
                 <div
-                    className="absolute right-70 bottom-[20%] w-[250px] h-[90px] bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center"
+                    className={`absolute bg-gray-100 rounded-md shadow-md cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-xl flex items-center justify-center`}
                     onClick={() => setStatus(3)}
+                    style={{
+                        width: `${250 * percentItemSize}px`,
+                        height: `${90 * percentItemSize}px`,
+                        top: `${centerPosition.top * 1.05}px`,
+                        left: `${centerPosition.Left + 150 * percentItemSize}px`
+                    }}
                 >
-                    <p className="font-bold text-sky-900 text-xl">Minh bạch & an toàn</p>
+                    <p className={`font-bold text-sky-900 text-xl`}
+                        style={{
+                            fontSize: `${percentItemSize * 20}px`
+                        }}
+                    >
+                        Minh bạch & an toàn
+                    </p>
                 </div>
             </div>
-        </section>
+        </section >
     );
 }
