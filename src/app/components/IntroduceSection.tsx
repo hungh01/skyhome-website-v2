@@ -39,7 +39,7 @@ export default function IntroduceSection() {
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-center text-black sm:pr-18 sm:pl-18 pr-8 pl-8 md:pr-0 md:pl-0 ">
-                    <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold text-secondary uppercase mb-3 sm:mb-4 md:mb-6">
+                    <h2 className="font-sarabun text-lg sm:text-xl md:text-2xl font-extrabold text-secondary uppercase mb-3 sm:mb-4 md:mb-6">
                         Giá trị cốt lõi
                     </h2>
                     <div className="flex flex-col gap-2 text-justify items-left">

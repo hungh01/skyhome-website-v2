@@ -18,21 +18,20 @@ export default function FourthSection() {
     const { isMobile } = useViewport();
 
     return (
-        <section className={`w-full ${isMobile ? 'h-auto' : 'h-screen'} relative overflow-hidden bg-[url('/about/whychoose/background.png')] bg-cover bg-center`}>
-            <div className="min-h-screen pt-20 flex flex-col items-center relative cursor-pointer">
-
+        <section className={`w-full ${isMobile ? 'h-auto' : 'h-screen'} relative overflow-hidden bg-[url('/about/whychoose/background.png')] bg-cover bg-center pt-10`}>
+            <div className="min-h-screen flex flex-col items-center relative cursor-pointer">
                 <div className="absolute  w-full  top-40 left-25 ">
                     <Image
                         src="/about/whychoose/text.png"
                         alt="SkyHome staff"
-                        width={430}
+                        width={410}
                         height={700}
                         priority
                     />
                 </div>
 
                 {/* Ô lời thoại */}
-                <div className="absolute w-98 h-70 top-20 right-35 rounded-lg px-6 py-4 text-white flex items-center justify-center">
+                <div className="absolute w-98 h-70 top-20 right-30 rounded-lg px-6 py-4 text-white flex items-center justify-center">
                     <p className={`text-sky-900 ${status === 4 ? 'text-3xl font-bold' : 'text-lg'} z-10 pb-8 pr-4 pl-4 text-center`}>{statusDisplay[status]}</p>
                     <Image
                         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -80,7 +79,6 @@ export default function FourthSection() {
                     <p className="font-bold text-sky-900 text-xl">Minh bạch & an toàn</p>
                 </div>
             </div>
-
         </section>
     );
 }

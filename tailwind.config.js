@@ -8,7 +8,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Sarabun', 'Arial', 'Helvetica', 'sans-serif'],
+                sarabun: ['var(--font-sarabun)'],
             },
         },
     },

@@ -3,7 +3,12 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ViewportProvider } from "@/contexts/ViewportContext";
+import { Sarabun } from 'next/font/google';
 
+const sarabun = Sarabun({
+  subsets: ['latin', 'vietnamese'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+});
 
 export const metadata: Metadata = {
   title: "Sky Home",
@@ -19,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="font-sans">
+    <html lang="en" className={sarabun.className}>
+      <body className="font-sarabun">
         <ViewportProvider>
           <Header />
           {children}
