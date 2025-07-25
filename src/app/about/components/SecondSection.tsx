@@ -2,9 +2,9 @@ import FlipCard from "@/components/FlipCard";
 
 export default function SecondSection() {
     return (
-        <div className="w-full min-h-screen flex items-center justify-center space-between relative bg-lime-50 px-2 py-8 md:px-8 md:py-12">
-            <div className="flex items-center justify-center w-full">
-                <div className="w-[400px] h-[500px] flex items-center justify-center">
+        <div className="w-full min-h-screen flex items-center justify-center relative bg-lime-50 px-2 py-8 md:px-8 md:py-12">
+            <div className="flex flex-col md:flex-row items-center justify-center w-full gap-8">
+                <div className="w-full max-w-[400px] h-auto flex items-center justify-center">
                     <FlipCard
                         image="/about/flipcard/vision.jpg"
                         title="Tầm nhìn"
@@ -12,7 +12,7 @@ export default function SecondSection() {
                         subtitle="Tầm nhìn"
                     />
                 </div>
-                <div className="w-[400px] h-[500px] flex items-center justify-center">
+                <div className="w-full max-w-[400px] h-auto flex items-center justify-center">
                     <FlipCard
                         image="/about/flipcard/mission.jpg"
                         title="Sứ mệnh"
@@ -20,7 +20,7 @@ export default function SecondSection() {
                         subtitle="Sứ mệnh"
                     />
                 </div>
-                <div className="w-[400px] h-[500px] flex items-center justify-center">
+                <div className="w-full max-w-[400px] h-auto flex items-center justify-center">
                     <FlipCard
                         image="/about/flipcard/value.jpg"
                         title="Giá trị"

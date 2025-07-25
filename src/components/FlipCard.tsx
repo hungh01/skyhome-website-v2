@@ -1,5 +1,6 @@
+'use client';
+import { useViewport } from "@/contexts/ViewportContext";
 import Image from "next/image";
-
 
 interface FlipCardProps extends React.HTMLAttributes<HTMLDivElement> {
     image: string;
@@ -22,6 +23,8 @@ export default function FlipCard({
     className,
     ...props
 }: FlipCardProps) {
+    const { isMobile } = useViewport();
+
     const rotationClass = {
         x: ["group-hover:[transform:rotateX(180deg)]", "[transform:rotateX(180deg)]"],
         y: ["group-hover:[transform:rotateY(180deg)]", "[transform:rotateY(180deg)]"],
@@ -29,10 +32,17 @@ export default function FlipCard({
     const self = rotationClass[rotate];
 
     return (
-        <div className={cn("group h-132 w-86 [perspective:1000px]", className)} {...props}>
+        <div
+            className={cn(
+                "group [perspective:1000px]",
+                isMobile ? "h-50 w-[90%]" : "h-132 w-86",
+                className
+            )}
+            {...props}
+        >
             <div
                 className={cn(
-                    "relative h-full rounded-2xl transition-all duration-500 [transform-style:preserve-3d]",
+                    "relative h-full rounded-xl transition-all duration-500 [transform-style:preserve-3d]",
                     self[0],
                 )}
             >
@@ -41,7 +51,7 @@ export default function FlipCard({
                     <Image
                         src={image}
                         alt="image"
-                        className="h-full w-full rounded-4xl object-cover shadow-2xl shadow-black/40"
+                        className="h-full w-full rounded-xl object-cover shadow-2xl shadow-black/40"
                         width={340}
                         height={340}
                     />
@@ -51,7 +61,7 @@ export default function FlipCard({
                 {/* Back */}
                 <div
                     className={cn(
-                        "absolute h-full w-full rounded-4xl bg-black/80 p-4 text-slate-200 [backface-visibility:hidden]",
+                        "absolute h-full w-full rounded-xl bg-black/80 p-4 text-slate-200 [backface-visibility:hidden]",
                         self[1],
                     )}
                 >

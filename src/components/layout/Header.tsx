@@ -99,21 +99,21 @@ export function Header() {
                                         <div className="py-4">
                                             <div className="space-y-1">
                                                 {/* Navigation Links */}
-                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
+                                                <Link href="/about" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Công ty
-                                                </a>
-                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
+                                                </Link>
+                                                <Link href="/customerservice" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Khách hàng cá nhân
-                                                </a>
-                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
+                                                </Link>
+                                                <Link href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Khách hàng doanh nghiệp
-                                                </a>
-                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
+                                                </Link>
+                                                <Link href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Tin tức
-                                                </a>
-                                                <a href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
+                                                </Link>
+                                                <Link href="#" className="block px-4 py-2 text-gray-700 text-sm font-bold transition-colors hover:bg-yellow-100 hover:text-sky-900">
                                                     Hỗ trợ
-                                                </a>
+                                                </Link>
 
 
                                                 {/* Divider */}
@@ -146,13 +146,15 @@ export function Header() {
 
                                 {/* Centered Logo */}
                                 <div className="flex-shrink-0">
-                                    <Image
-                                        src={"/logo-company.svg"}
-                                        alt="Logo"
-                                        width={scrollY > 200 ? 100 : 125}
-                                        height={scrollY > 200 ? 24 : 30}
-                                        className="transition-all duration-300"
-                                    />
+                                    <Link href="/" className="flex-shrink-0 cursor-pointer">
+                                        <Image
+                                            src={"/logo-company.svg"}
+                                            alt="Logo"
+                                            width={scrollY > 200 ? 100 : 125}
+                                            height={scrollY > 200 ? 24 : 30}
+                                            className="transition-all duration-300"
+                                        />
+                                    </Link>
                                 </div>
                                 {/* Empty space to balance the layout */}
                                 <div className="w-10"></div>

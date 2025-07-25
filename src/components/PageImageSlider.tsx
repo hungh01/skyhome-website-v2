@@ -3,13 +3,23 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useEffect, useState } from 'react';
+import { useViewport } from '@/contexts/ViewportContext';
 
-const images = [
-    '/about/banner/banner1.png',
-    '/about/banner/banner2.jpg',
-    '/about/banner/banner1.png',
-    '/about/banner/banner2.jpg',
+const banner = [
+    '/homepage/banner/banner1.png',
+    '/homepage/banner/banner2.jpg',
+    '/homepage/banner/banner1.png',
+    '/homepage/banner/banner2.jpg',
 ];
+
+const mobileBanner = [
+    '/homepage/mobilebanner/banner-mobile-bt.png',
+    '/homepage/mobilebanner/banner-mobile-tvs.png',
+    '/homepage/mobilebanner/banner-mobile-vstg.png',
+    '/homepage/mobilebanner/banner-mobile-tvs.png'
+]
+
 const settings = {
     infinite: true,
     autoplay: true,
@@ -22,19 +32,33 @@ const settings = {
 };
 
 export default function PageImageSlider() {
+    const [images, setImages] = useState(banner);
+
+    const { isMobile } = useViewport();
+
+    // Update images when isMobile changes
+    useEffect(() => {
+        if (isMobile) {
+            setImages(mobileBanner);
+        } else {
+            setImages(banner);
+        }
+    }, [isMobile]);
+
     return (
         <div className="my-slider w-auto h-auto pb-0">
             <Slider
                 {...settings}
             >
                 {images.map((src, index) => (
-                    <div key={index} className="w-10/12 h-185 relative">
+                    <div key={index} className="w-auto h-185 relative">
                         <Image
                             src={src}
                             alt={`Slide ${index + 1}`}
                             fill
                             className=" object-cover"
                             priority
+
                         />
                     </div>
                 ))}
