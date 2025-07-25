@@ -8,13 +8,13 @@ const nextConfig: NextConfig = {
       'randomuser.me',
     ],
   },
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Sarabun', 'Arial', 'Helvetica', 'sans-serif'],
-      },
-    },
-  },
+  // theme: {
+  //   extend: {
+  //     fontFamily: {
+  //       sans: ['Sarabun', 'Arial', 'Helvetica', 'sans-serif'],
+  //     },
+  //   },
+  // },
 };
 
 export default nextConfig;
