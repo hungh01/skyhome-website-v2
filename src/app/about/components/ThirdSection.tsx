@@ -9,13 +9,7 @@ export default function ThirdSection() {
 
     return (
         <section className={`w-full ${isMobile ? 'h-auto' : 'h-screen'} relative overflow-hidden pt-3`}>
-            <Image
-                className="absolute inset-0 w-full h-full object-cover z-11 opacity-20"
-                src="/introduce/trongdongcomap.png"
-                alt="Background Image"
-                fill
-                priority
-            />
+
             {/* Content */}
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
                 <div className="flex flex-col lg:flex-row items-center justify-between h-full px-4 pt-6 lg:py-0">

@@ -2,7 +2,7 @@ import FlipCard from "@/components/FlipCard";
 
 export default function SecondSection() {
     return (
-        <div className="w-full min-h-screen flex items-center justify-center relative bg-lime-50 px-2 py-8 md:px-8 md:py-12">
+        <div className="w-full h-screen flex items-center justify-center relative  px-2 py-8 md:px-8 md:py-12">
             <div className="flex flex-col md:flex-row items-center justify-center w-full gap-8">
                 <div className="w-full max-w-[400px] h-auto flex items-center justify-center">
                     <FlipCard

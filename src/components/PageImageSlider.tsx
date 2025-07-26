@@ -3,22 +3,15 @@ import Slider from 'react-slick';
 import Image from 'next/image';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useEffect, useState } from 'react';
+
 import { useViewport } from '@/contexts/ViewportContext';
 
-const banner = [
+const images = [
     '/homepage/banner/banner1.png',
     '/homepage/banner/banner2.jpg',
     '/homepage/banner/banner1.png',
     '/homepage/banner/banner2.jpg',
 ];
-
-const mobileBanner = [
-    '/homepage/mobilebanner/banner-mobile-bt.png',
-    '/homepage/mobilebanner/banner-mobile-tvs.png',
-    '/homepage/mobilebanner/banner-mobile-vstg.png',
-    '/homepage/mobilebanner/banner-mobile-tvs.png'
-]
 
 const settings = {
     infinite: true,
@@ -28,45 +21,54 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    dots: true
+    dots: true,
 };
 
 export default function PageImageSlider() {
-    const [images, setImages] = useState(banner);
-
-    const { isMobile } = useViewport();
-
-    // Update images when isMobile changes
-    useEffect(() => {
-        if (isMobile) {
-            setImages(mobileBanner);
-        } else {
-            setImages(banner);
-        }
-    }, [isMobile]);
+    const { width } = useViewport();
+    const sliderHeight = width ? width / 2.25 : 185;
 
     return (
-        <div className="my-slider w-auto h-auto pb-0">
-            <Slider
-                {...settings}
-            >
+        <div
+            className="my-slider w-full relative"
+            style={{ height: sliderHeight }}
+        >
+            <Slider {...settings}>
                 {images.map((src, index) => (
-                    <div key={index} className={`w-auto ${isMobile ? 'h-185' : 'h-185'} relative`}>
-                        <Image
-                            src={src}
-                            alt={`Slide ${index + 1}`}
-                            fill
-                            className="object-cover"
-                            priority
-
-                        />
+                    <div key={index}>
+                        <div
+                            className="relative w-full"
+                            style={{ height: sliderHeight }}
+                        >
+                            <Image
+                                src={src}
+                                alt={`Slide ${index + 1}`}
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
                     </div>
                 ))}
             </Slider>
-            <style>{`
-                .my-slider .slick-dots {
-                    bottom: 20px !important;
+
+            <style jsx>{`
+                .my-slider :global(.slick-list),
+                .my-slider :global(.slick-track),
+                .my-slider :global(.slick-slide),
+                .my-slider :global(.slick-slide > div) {
+                    height: 100% !important;
                 }
+                      .my-slider :global(.slick-dots) {
+    position: absolute !important;
+    bottom: 24px !important; /* adjust as needed */
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex !important;
+    justify-content: center;
+    pointer-events: auto;
+  }
             `}</style>
         </div>
     );
