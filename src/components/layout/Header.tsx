@@ -13,13 +13,13 @@ export function Header() {
     const [scrollY, setScrollY] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
 
-
     useEffect(() => {
         const handleScroll = () => setScrollY(window.scrollY);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    console.log("Header render", scrollY);
 
     return (
         <>

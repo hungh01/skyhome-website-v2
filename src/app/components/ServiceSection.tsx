@@ -28,7 +28,7 @@ export default function ServiceSection() {
         <section className=" mt-5 mb-5 w-full snap-start h-screen  bg-center bg-no-repeat bg-cover bg-[url('/service/mapmapmo.png')]">
             <div className="flex justify-center items-center h-full">
                 <FlowerMenu
-                    animationDuration={5000}
+                    animationDuration={2000}
                     backgroundColor="transparent"
                     iconColor=""
                     menuItems={[
