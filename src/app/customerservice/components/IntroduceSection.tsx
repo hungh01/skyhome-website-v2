@@ -14,7 +14,11 @@ const services = [
 export default function IntroduceSection() {
     return (
         <section className="w-full h-screen flex items-center justify-center relative bg-gray-50 px-2 py-8 md:px-8 md:py-12">
-            <div className="absolute inset-0 w-full h-full bg-[url('/customerservice/bannerdvcn.png')] bg-cover bg-center"></div>
+            <Image className="absolute inset-0 w-full h-full object-cover"
+                src="/customerservice/bannerdvcn.png"
+                alt="Background Image"
+                fill priority
+            />
             <div className="relative z-10 flex flex-col w-full h-[600px] max-w-4xl mx-auto">
                 {/* Top row - 70% height */}
                 <div className="flex-1 basis-[70%] flex items-center justify-center"></div>

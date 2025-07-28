@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { ViewportProvider } from "@/contexts/ViewportContext";
 import { Sarabun } from 'next/font/google';
 
@@ -29,7 +28,6 @@ export default function RootLayout({
         <ViewportProvider>
           <Header />
           {children}
-          <Footer />
         </ViewportProvider>
       </body>
     </html>

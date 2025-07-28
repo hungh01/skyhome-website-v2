@@ -2,7 +2,6 @@ import Link from "next/link";
 
 export default function NotFound() {
     return (
-
         <div className="h-screen w-screen flex items-center">
             <div className="fixed inset-0 w-full h-full bg-[url('/banner-home.png')] bg-cover bg-center opacity-50 -z-1"></div>
             <div className="container flex flex-col md:flex-row items-center justify-center px-5 text-gray-700">

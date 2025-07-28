@@ -15,9 +15,9 @@ const coreValues = [
 export default function IntroduceSection() {
     const { isMobile } = useViewport();
     return (
-        <section className="w-full min-h-screen flex items-center justify-center relative bg-gray-50 px-2 py-8 md:px-8 md:py-12">
+        <section className="w-full snap-start h-screen flex items-center justify-center relative bg-white px-2 py-8 md:px-8 md:py-12">
             {/* Background image with opacity */}
-            <div className="absolute inset-0 w-full h-full bg-[url('/introduce/trongdong.png')] bg-cover bg-center opacity-20 rounded-xl"></div>
+            {/* <div className="absolute inset-0 w-full h-full bg-[url('/introduce/trongdong.png')] bg-cover bg-center opacity-20 rounded-xl"></div> */}
             {/* Content on top */}
             <div className="relative max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-center md:text-left z-10">
                 <div className="flex items-center justify-center">

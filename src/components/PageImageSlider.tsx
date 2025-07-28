@@ -26,7 +26,7 @@ const settings = {
 
 export default function PageImageSlider() {
     const { width } = useViewport();
-    const sliderHeight = width ? width / 2.25 : 185;
+    const sliderHeight = width ? width / 1.75 : 185;
 
     return (
         <div
@@ -60,15 +60,15 @@ export default function PageImageSlider() {
                     height: 100% !important;
                 }
                       .my-slider :global(.slick-dots) {
-    position: absolute !important;
-    bottom: 24px !important; /* adjust as needed */
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    display: flex !important;
-    justify-content: center;
-    pointer-events: auto;
-  }
+                    position: absolute !important;
+                    bottom: 24px !important; /* adjust as needed */
+                    left: 0;
+                    width: 100%;
+                    z-index: 10;
+                    display: flex !important;
+                    justify-content: center;
+                    pointer-events: auto;
+                }
             `}</style>
         </div>
     );

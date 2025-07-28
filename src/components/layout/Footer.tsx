@@ -3,10 +3,9 @@ import DownloadButton from "../button/DowloadButton";
 
 export function Footer() {
     return (
-        <footer className="bg-white">
-            {/* Yellow CTA Section */}
-            <div className="bg-[#fddb00] py-8 md:py-12 text-sky-900">
-                <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <footer className="bg-white snap-start h-screen">
+            <div className="bg-gradient-to-t from-[#FDDB00] to-white py-8 md:py-12 text-sky-900">
+                <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 pt-20">
                     <div className="text-left">
                         <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-3 md:mb-4">
                             Đăng ký ngay hôm nay
@@ -18,8 +17,6 @@ export function Footer() {
                     </div>
                 </div>
             </div>
-
-            {/* Main Footer Content */}
             <div className="mx-auto max-w-screen-xl px-4 py-8 md:py-12 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8">
 

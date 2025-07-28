@@ -7,7 +7,7 @@ export default function HomeSection() {
     const { isMobile } = useViewport();
 
     return (
-        <section className={`w-full ${isMobile ? 'h-auto' : 'h-screen'} relative overflow-hidden ${isMobile ? 'bg-[url("/banner-home.png")] bg-cover bg-center' : ''}`}>
+        <section className={`w-full snap-start h-screen relative overflow-hidden `}>
             <PageImageSlider />
         </section>
     );

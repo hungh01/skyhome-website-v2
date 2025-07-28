@@ -30,7 +30,7 @@ const listBenefits = [
 
 export default function BenefitSection() {
     return (
-        <section className="w-full h-screen flex items-center justify-center relative bg-gray-50 px-2 py-8 md:px-8 md:py-12">
+        <section className="w-full h-screen flex items-center justify-center relative  px-2 py-8 md:px-8 md:py-12">
             <div className="absolute inset-0 w-full h-full bg-[url('/customerservice/benefitsection.png')] bg-cover bg-center"></div>
             <div className="relative z-10 flex flex-col w-full h-full mx-auto">
                 {/* Top row - 90% height */}
