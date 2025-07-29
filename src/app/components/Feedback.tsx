@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function Feedback() {
     return (
 
-        <section className="snap-start h-screen items-center flex justify-center ">\
-            <div className="absolute inset-0 w-full h-full bg-[url('/introduce/trongdong.png')] bg-cover bg-center opacity-20 rounded-xl -z-1"></div>
+        <section className="snap-start h-screen items-center flex justify-center ">
+            <div className="absolute inset-0 w-full h-full bg-[url('/introduce/trongdong.png')] bg-cover bg-center opacity-10 rounded-xl -z-1"></div>
             <div className=" text-black h-screen py-20 w-[80%]">
                 <div className="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
                     <div className="flex flex-col w-full lg:w-1/3 p-8">
