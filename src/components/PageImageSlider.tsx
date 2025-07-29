@@ -8,9 +8,9 @@ import { useViewport } from '@/contexts/ViewportContext';
 
 const images = [
     '/homepage/banner/banner1.png',
-    '/homepage/banner/banner2.png',
     '/homepage/banner/banner1.png',
-    '/homepage/banner/banner2.png',
+    '/homepage/banner/banner1.png',
+    '/homepage/banner/banner1.png',
 ];
 
 const settings = {
