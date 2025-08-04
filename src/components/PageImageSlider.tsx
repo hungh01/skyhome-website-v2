@@ -6,11 +6,16 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import { useViewport } from '@/contexts/ViewportContext';
 
-const images = [
-    '/homepage/banner/banner1.png',
-    '/homepage/banner/banner1.png',
-    '/homepage/banner/banner1.png',
-    '/homepage/banner/banner1.png',
+const imagesFull = [
+    '/homepage/banner/banner2.png',
+    '/homepage/banner/banner2.png',
+    '/homepage/banner/banner2.png',
+    '/homepage/banner/banner2.png',
+];
+
+const imagesMobile = [
+    '/homepage/mobilebanner/banner1.png',
+    '/homepage/mobilebanner/banner1.png',
 ];
 
 const settings = {
@@ -25,20 +30,22 @@ const settings = {
 };
 
 export default function PageImageSlider() {
-    const { width } = useViewport();
-    const sliderHeight = width ? width / 1.75 : 185;
+    const { width, height, isMobile } = useViewport();
+    //const sliderHeight = width ? width / 1.7 : 185;
+    const images = isMobile ? imagesMobile : imagesFull;
 
+    console.log('Slider height:', height);
     return (
         <div
             className="my-slider w-full relative"
-            style={{ height: sliderHeight }}
+            style={{ height: height }}
         >
             <Slider {...settings}>
                 {images.map((src, index) => (
                     <div key={index}>
                         <div
                             className="relative w-full"
-                            style={{ height: sliderHeight }}
+                            style={{ height: height }}
                         >
                             <Image
                                 src={src}

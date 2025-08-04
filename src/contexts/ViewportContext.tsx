@@ -5,6 +5,7 @@ import { createContext, useContext, useEffect, useState, ReactNode } from 'react
 interface ViewportContextType {
     isMobile: boolean;
     width: number;
+    height: number;
 }
 
 const ViewportContext = createContext<ViewportContextType | undefined>(undefined);
@@ -12,11 +13,13 @@ const ViewportContext = createContext<ViewportContextType | undefined>(undefined
 export const ViewportProvider = ({ children }: { children: ReactNode }) => {
     const [isMobile, setIsMobile] = useState(false);
     const [width, setWidth] = useState(2000);
+    const [height, setHeight] = useState(2000);
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth < 1025); // breakpoint tùy chỉnh
             setWidth(window.innerWidth);
+            setHeight(window.innerHeight);
         };
 
         handleResize(); // set lần đầu
@@ -25,7 +28,7 @@ export const ViewportProvider = ({ children }: { children: ReactNode }) => {
     }, []);
 
     return (
-        <ViewportContext.Provider value={{ isMobile, width }}>
+        <ViewportContext.Provider value={{ isMobile, width, height }}>
             {children}
         </ViewportContext.Provider>
     );
