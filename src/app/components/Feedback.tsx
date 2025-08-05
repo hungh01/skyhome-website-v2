@@ -38,8 +38,8 @@ export default function Feedback() {
             setPhone("");
             setService("");
             setContent("");
-        } catch (err: any) {
-            setError(err.message || "Có lỗi xảy ra.");
+        } catch {
+            setError("Có lỗi xảy ra.");
         } finally {
             setLoading(false);
         }
