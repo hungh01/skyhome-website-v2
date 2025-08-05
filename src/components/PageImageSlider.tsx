@@ -14,8 +14,8 @@ const imagesFull = [
 ];
 
 const imagesMobile = [
-    '/homepage/mobilebanner/banner1.png',
-    '/homepage/mobilebanner/banner1.png',
+    '/homepage/mobilebanner/banner.png',
+    '/homepage/mobilebanner/banner.png',
 ];
 
 const settings = {
@@ -31,21 +31,20 @@ const settings = {
 
 export default function PageImageSlider() {
     const { width, height, isMobile } = useViewport();
-    //const sliderHeight = width ? width / 1.7 : 185;
+
     const images = isMobile ? imagesMobile : imagesFull;
 
-    console.log('Slider height:', height);
     return (
         <div
             className="my-slider w-full relative"
-            style={{ height: height }}
+            style={{ height: height, width: width }}
         >
             <Slider {...settings}>
                 {images.map((src, index) => (
                     <div key={index}>
                         <div
                             className="relative w-full"
-                            style={{ height: height }}
+                            style={{ height: height, width: width }}
                         >
                             <Image
                                 src={src}
