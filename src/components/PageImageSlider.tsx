@@ -8,14 +8,14 @@ import { useViewport } from '@/contexts/ViewportContext';
 
 const imagesFull = [
     '/homepage/banner/banner2.png',
+    '/homepage/banner/banner1.png',
     '/homepage/banner/banner2.png',
-    '/homepage/banner/banner2.png',
-    '/homepage/banner/banner2.png',
+    '/homepage/banner/banner1.png',
 ];
 
 const imagesMobile = [
-    '/homepage/mobilebanner/banner.png',
-    '/homepage/mobilebanner/banner.png',
+    '/homepage/mobilebanner/banner1.png',
+    '/homepage/mobilebanner/banner2.png',
 ];
 
 const settings = {
