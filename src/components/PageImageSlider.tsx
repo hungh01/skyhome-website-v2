@@ -16,6 +16,8 @@ const imagesFull = [
 const imagesMobile = [
     '/homepage/mobilebanner/banner1.png',
     '/homepage/mobilebanner/banner2.png',
+    '/homepage/mobilebanner/banner1.png',
+    '/homepage/mobilebanner/banner2.png',
 ];
 
 const settings = {
@@ -65,7 +67,7 @@ export default function PageImageSlider() {
                 .my-slider :global(.slick-slide > div) {
                     height: 100% !important;
                 }
-                      .my-slider :global(.slick-dots) {
+                .my-slider :global(.slick-dots) {
                     position: absolute !important;
                     bottom: 24px !important; /* adjust as needed */
                     left: 0;
