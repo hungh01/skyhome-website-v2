@@ -85,13 +85,13 @@ export function Footer() {
                     <div className="flex flex-col items-center md:items-end">
                         <p className="text-xs md:text-sm text-gray-600 mb-1">Theo dõi các nền tảng</p>
                         <div className="flex space-x-3">
-                            <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center text-white ">
+                            <a href="https://www.facebook.com/skyantvietnam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full flex items-center justify-center text-white ">
                                 <Image src="/icon/fb-icon.png" alt="Facebook" width={32} height={32} />
                             </a>
-                            <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center text-white ">
+                            <a href="https://www.youtube.com/@skyantvietnam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full flex items-center justify-center text-white ">
                                 <Image src="/icon/yt-icon.png" alt="YouTube" width={32} height={32} />
                             </a>
-                            <a href="#" className="w-8 h-8 rounded-full flex items-center justify-center text-white ">
+                            <a href="https://www.tiktok.com/@skyantvietnam" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full flex items-center justify-center text-white ">
                                 <Image src="/icon/tiktok-icon.png" alt="TikTok" width={32} height={32} />
                             </a>
                         </div>
